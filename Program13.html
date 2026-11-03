@@ -4,8 +4,21 @@
 </head>
 <body>
 <h2>Light bulb ON/OFF</h2>
-<img id="bulb" src="" width="200" height="200">
+<img id="b" src="images/off.png " style="width:250px; height:250; ">
 <br><br>
-<button onclick="document.getElementById('bulb'0.src=''">
+<button id="btn">
+ON/OFF
+</button>
+<script>
+document.getElementById("btn").addEventListener("click", function(){
+    var b = document.getElementById("b");
+    if (b.src.includes("images/off.png"))
+        b.src = "images/on.png";
+    else
+        b.src="images/off.png";
+    });
+    
+</script>
+
 </body>
 </html>
