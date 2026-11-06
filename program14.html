@@ -2,43 +2,201 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>String and Math Functions</title>
+    <title>JavaScript String and Math Functions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            font-size: 13px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 21px;
+            margin: 5px;
+        }
+
+        h2 {
+            font-size: 17px;
+            margin: 5px 0;
+        }
+
+        h3 {
+            font-size: 14px;
+            margin: 7px 0 4px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .section {
+            border: 1px solid black;
+            padding: 8px;
+            width: auto;
+        }
+
+        p {
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+
+        .codebox {
+            background-color: #eeeeee;
+            padding: 7px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 6px 12px;
+            margin: 7px 0;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .output {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            padding: 7px;
+            margin-top: 5px;
+            line-height: 1.4;
+            font-size: 12px;
+        }
+    </style>
 </head>
+
 <body>
 
 <h1>Predefined Functions in JavaScript</h1>
 
-<h2>String Object</h2>
-<p>
-JavaScript String methods perform operations such as finding length,
-changing case, extracting characters, replacing text, searching,
-and removing extra spaces.
-</p>
+<div class="container">
 
-Enter a string:
-<input type="text" id="txt">
-<button onclick="stringFunctions()">Apply</button>
 
-<div id="strOut"></div>
 
-<h2>Math Object</h2>
-<p>
-JavaScript Math methods perform mathematical operations such as
-rounding, square roots, powers, logarithms, and finding minimum
-and maximum values.
-</p>
+<div class="section">
 
-Enter a number:
-<input type="number" id="num">
-<button onclick="mathFunctions()">Apply</button>
+    <h2>1. String </h2>
 
-<div id="mathOut"></div>
+    <p>
+        <b>Definition:</b>
+        A String is used to store and manipulate text in JavaScript.
+        It contains letters, numbers, symbols and spaces.
+    </p>
+
+    <p>
+        String methods are used to find length, change case,
+        extract characters, search, replace and modify text.
+    </p>
+
+    <h3>String Functions and Definitions</h3>
+
+    <div class="codebox">
+
+        <b>length</b> - Returns the string length.<br>
+
+        <b>toUpperCase()</b> - Converts text to uppercase.<br>
+
+        <b>toLowerCase()</b> - Converts text to lowercase.<br>
+
+        <b>charAt()</b> - Returns a character at an index.<br>
+
+        <b>split()</b> - Splits a string into an array.<br>
+
+        <b>reverse()</b> - Reverses array elements.<br>
+
+        <b>join()</b> - Joins array elements into a string.<br>
+
+        <b>trim()</b> - Removes spaces at both ends.<br>
+
+        <b>slice()</b> - Extracts part of a string.<br>
+
+        <b>substring()</b> - Extracts characters between indexes.<br>
+
+
+        <b>indexOf()</b> - Finds the first text position.<br>
+
+        <b>lastIndexOf()</b> - Finds the last text position.<br>
+
+        <b>repeat()</b> - Repeats a string.
+
+    </div>
+
+    <button onclick="stringFunctions()">Run String Functions</button>
+
+    <p><b>String:</b> "Hello JavaScript"</p>
+
+    <div class="output" id="strOut">
+        String output will appear here.
+    </div>
+
+</div>
+
+
+
+
+<div class="section">
+
+    <h2>2. Math </h2>
+
+    <p>
+        <b>Definition:</b>
+        Math is a built-in JavaScript object used to perform
+        mathematical calculations on numbers.
+    </p>
+
+    <p>
+        It provides methods for rounding, finding square roots,
+        calculating powers and performing other operations.
+    </p>
+
+    <h3>Math Functions and Definitions</h3>
+
+    <div class="codebox">
+
+        <b>Math.round()</b> - Rounds to nearest integer.<br>
+
+        <b>Math.ceil()</b> - Rounds a number upward.<br>
+
+        <b>Math.floor()</b> - Rounds a number downward.<br>
+
+        <b>Math.sqrt()</b> - Finds the square root.<br>
+
+        <b>Math.pow()</b> - Calculates the power of a number.<br>
+
+        <b>Math.abs()</b> - Returns the absolute value.<br>
+
+        <b>Math.sign()</b> - Returns the sign of a number.<br>
+
+        <b>Math.trunc()</b> - Removes the decimal part.<br>
+
+        <b>Math.exp()</b> - Calculates e raised to a power.
+
+    </div>
+
+    <button onclick="mathFunctions()">Run Math Functions</button>
+
+    <p><b>Number:</b> 25</p>
+
+    <div class="output" id="mathOut">
+        Math output will appear here.
+    </div>
+
+</div>
+
+</div>
+
 
 <script>
 
 function stringFunctions() {
 
-    var s = document.getElementById("txt").value;
+    var s = "Hello JavaScript";
     var out = "";
 
     out += "Length: " + s.length + "<br>";
@@ -47,49 +205,32 @@ function stringFunctions() {
     out += "First character: " + s.charAt(0) + "<br>";
     out += "Last character: " + s.charAt(s.length - 1) + "<br>";
     out += "Reversed: " + s.split("").reverse().join("") + "<br>";
-
-    // Additional String Functions
-
     out += "Trim: " + s.trim() + "<br>";
     out += "Slice (0,3): " + s.slice(0, 3) + "<br>";
     out += "Substring (0,3): " + s.substring(0, 3) + "<br>";
-    out += "Replace (a with @): " + s.replace("a", "@") + "<br>";
-    out += "Includes 'a': " + s.includes("a") + "<br>";
-    out += "Starts with 'A': " + s.startsWith("A") + "<br>";
-    out += "Ends with 'a': " + s.endsWith("a") + "<br>";
     out += "Index of 'a': " + s.indexOf("a") + "<br>";
     out += "Last index of 'a': " + s.lastIndexOf("a") + "<br>";
     out += "Repeat twice: " + s.repeat(2) + "<br>";
 
-
     document.getElementById("strOut").innerHTML = out;
 }
 
+
 function mathFunctions() {
 
-    var n = parseFloat(document.getElementById("num").value);
+    var n = 25;
     var out = "";
-
-    if (isNaN(n)) {
-        document.getElementById("mathOut").innerHTML =
-            "Please enter a valid number.";
-        return;
-    }
 
     out += "Round: " + Math.round(n) + "<br>";
     out += "Ceil: " + Math.ceil(n) + "<br>";
     out += "Floor: " + Math.floor(n) + "<br>";
     out += "Square root: " + Math.sqrt(n) + "<br>";
     out += "Power (n^2): " + Math.pow(n, 2) + "<br>";
-
-    // Additional Math Functions
-
     out += "Absolute value: " + Math.abs(n) + "<br>";
     out += "Cube: " + Math.pow(n, 3) + "<br>";
     out += "Sign: " + Math.sign(n) + "<br>";
     out += "Truncate: " + Math.trunc(n) + "<br>";
     out += "Exponential: " + Math.exp(n) + "<br>";
-
 
     document.getElementById("mathOut").innerHTML = out;
 }

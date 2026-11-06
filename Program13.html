@@ -1,24 +1,77 @@
+
+<!DOCTYPE html>
 <html>
 <head>
-<title>Light blue</title>
+    <title>Light Bulb ON/OFF</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+        }
+
+        button {
+            padding: 10px 30px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #onBtn {
+            background-color: green;
+            color: white;
+        }
+
+        #offBtn {
+            background-color: red;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-<h2>Light bulb ON/OFF</h2>
-<img id="b" src="images/off.png " style="width:250px; height:250; ">
-<br><br>
-<button id="btn">
-ON/OFF
-</button>
-<script>
-document.getElementById("btn").addEventListener("click", function(){
-    var b = document.getElementById("b");
-    if (b.src.includes("images/off.png"))
-        b.src = "images/on.png";
-    else
-        b.src="images/off.png";
-    });
-    
-</script>
+
+    <div class="container">
+
+        <h2>Light Bulb ON/OFF</h2>
+
+        <img id="b" src="images/bulb_off.gif" alt="Light Bulb">
+
+        <br><br>
+
+        <div>
+            <button id="onBtn">ON</button>
+            <button id="offBtn">OFF</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        document.getElementById("onBtn").addEventListener("click", function() {
+            document.getElementById("b").src = "images/bulb_on.gif";
+        });
+
+        document.getElementById("offBtn").addEventListener("click", function() {
+            document.getElementById("b").src = "images/bulb_off.gif";
+        });
+
+    </script>
 
 </body>
 </html>
+
