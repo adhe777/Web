@@ -1,0 +1,21 @@
+.para{
+    background-color:  Lightgreen;
+    color: White;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
+#para1{
+    background-color:  Red;
+    color: Yellow;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
+p{
+     background-color:  Blue;
+    color: White;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
